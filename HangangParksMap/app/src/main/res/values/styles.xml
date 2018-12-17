@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorRiver</item>
+        <item name="colorPrimaryDark">@color/colorSky</item>
+        <item name="colorAccent">@color/colorSun</item>
+
+    </style>
+
+    <style name="AppBarOverlay" parent="AppTheme.AppBarOverlay">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorSky</item>
+        <item name="colorAccent">@color/colorSun</item>
+        <item name="android:displayOptions">homeAsUp</item>
+        <item name="android:statusBarColor">@color/colorSky</item>
+    </style>
+
+    <style name="MyMergedLayout" parent=""></style>
+
+    <style name="NoActionBar" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimary">@color/colorRiver</item>
+        <item name="colorPrimaryDark">@color/colorSky</item>
+        <item name="colorAccent">@color/colorSun</item>
+
+    </style>
+
+    <style name="PopupOverlay" parent="AppTheme.PopupOverlay">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorRiver</item>
+        <item name="colorPrimaryDark">@color/colorSky</item>
+        <item name="colorAccent">@color/colorSun</item>
+
+    </style>
+
+</resources>

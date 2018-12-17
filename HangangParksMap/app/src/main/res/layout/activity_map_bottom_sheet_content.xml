@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_Map_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/layout_upper_shadow"
+
+    app:layout_behavior="@string/BottomSheetBehaviorGoogleMapsLike"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/activity_Map_bottomSheet_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorRiver"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/activity_Map_textView_pointName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/activity_Map_textView_pointAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/activity_Map_textView_pointDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="textEnd" />
+
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/activity_Map_bottomSheet_Button_Sharing"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/ic_menu_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/activity_Map_bottomSheet_Button_Favorite"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/activity_Map_bottomSheet_Button_Favorite"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:elevation="0dp"
+            android:padding="3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/star_off"
+            app:layout_constraintEnd_toStartOf="@+id/activity_Map_bottomSheet_Button_Sharing"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="4dp"
+            android:text="즐겨찾기"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/activity_Map_bottomSheet_Button_Favorite"
+            app:layout_constraintStart_toStartOf="@+id/activity_Map_bottomSheet_Button_Favorite"
+            app:layout_constraintTop_toBottomOf="@+id/activity_Map_bottomSheet_Button_Favorite" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="4dp"
+            android:text="공유하기"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/activity_Map_bottomSheet_Button_Sharing"
+            app:layout_constraintStart_toStartOf="@+id/activity_Map_bottomSheet_Button_Sharing"
+            app:layout_constraintTop_toBottomOf="@+id/activity_Map_bottomSheet_Button_Sharing" />
+    </android.support.constraint.ConstraintLayout>
+
+
+    <com.example.junmung.hangangparksmap.Map.NestedWebView
+        android:id="@+id/activity_Map_bottomSheet_WebView"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"></com.example.junmung.hangangparksmap.Map.NestedWebView>
+
+
+
+</LinearLayout>

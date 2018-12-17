@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HangangParksMap</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_hide">Hide Panel</string>
+    <string name="action_show">Show Panel</string>
+    <string name="action_anchor_enable">Enable Anchor Point</string>
+    <string name="action_anchor_disable">Disable Anchor Point</string>
+</resources>

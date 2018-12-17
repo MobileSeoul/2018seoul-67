@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_Map_rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.junmung.hangangparksmap.Map.MapActivity">
+
+    <!-- MAIN CONTENT -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/activity_Map_mapView_Container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+
+        <RelativeLayout
+            android:id="@+id/activity_Map_mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </RelativeLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/activity_Map_appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppBarOverlay"
+        app:layout_behavior="@string/ScrollingAppBarLayoutBehavior">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/activity_Map_toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/PopupOverlay"
+            app:subtitleTextColor="@color/colorHalfInvisibleBlack"
+
+            app:titleTextColor="@color/colorHalfInvisibleBlack" >
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/activity_map_searchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:gravity="left">
+
+            </android.support.v7.widget.SearchView>
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/activity_Map_bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:anchorPoint="450dp"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="100dp"
+        app:layout_behavior="@string/BottomSheetBehaviorGoogleMapsLike">
+
+        <include layout="@layout/activity_map_bottom_sheet_content" />
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <com.example.junmung.hangangparksmap.Map.AnimatingLayout
+        android:id="@+id/activity_Map_fabContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:paddingBottom="26dp"
+        app:layout_anchor="@id/activity_Map_bottom_sheet"
+        app:layout_anchorGravity="end">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/activity_Map_fab_currentLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/my_location_black_48"
+            app:backgroundTint="@android:color/white"
+            app:elevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_Map_fab_filter" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/activity_Map_fab_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/filter"
+            app:backgroundTint="@android:color/white"
+            app:elevation="5dp"
+            app:layout_anchor="@+id/activity_Map_fab_currentLocation"
+            app:layout_anchorGravity="top|center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </com.example.junmung.hangangparksmap.Map.AnimatingLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/activity_Map_fab_ARGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/walk_black_48"
+        android:tint="@android:color/white"
+        app:backgroundTint="@color/colorRiver"
+        app:elevation="5dp"
+        app:layout_anchor="@id/activity_Map_bottomSheet"
+        app:layout_anchorGravity="top|right|end"
+        app:layout_behavior="@string/ScrollAwareFABBehavior" />
+
+    <com.mahc.custombottomsheetbehavior.MergedAppBarLayout
+        android:id="@+id/activity_Map_mergedAppbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/MergedAppBarLayoutBehavior" />
+
+
+</android.support.design.widget.CoordinatorLayout>

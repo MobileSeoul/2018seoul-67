@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.junmung.hangangparksmap"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude "lib/arm64-v8a/librealm-jni.so"
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi-v7a', 'armeabi'
+            universalApk false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    implementation 'com.google.maps.android:android-maps-utils:0.5+'
+    implementation 'com.github.filosganga:geogson-core:1.2.21'
+
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: '1.7.0'
+
+    implementation 'com.mahc.custombottomsheetbehavior:googlemaps-like:0.9.1'
+
+    implementation 'gun0912.ted:tedpermission:2.2.0'
+
+    implementation 'info.hoang8f:fbutton:1.0.5'
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation files('libs/libDaumMapAndroid.jar')
+    implementation files('libs/com.skt.Tmap_1.52.jar')
+}
